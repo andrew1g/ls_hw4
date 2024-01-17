@@ -32,3 +32,4 @@ abstract class tarif() implements calculate_price
 
 // 5. Описать **2 услуги** реализовав интерфейс услуг
 
+?>
