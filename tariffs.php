@@ -2,28 +2,30 @@
 
 // 1. Создать интерфейс, который будет содержать описание метода подсчета цены, 
 //метода добавления услуги (принимает на вход интерфейс услуги)
-interface calc_price() {
+interface icalc_price() {
     public function calculate_price();
-    public function add_service($service);
+    public function add_service(ServiceInterface $service);
 }
 
 
 // 2. Описать интерфейс доп. услуги, который содержит метод применения услуги к тарифу, 
 //который пересчитывает цену в зависимости от особенностей услуги
-interface additional_service() {
+interface ServiceInterface() {
     public function recalc_price();
 }
 
 // 3. Реализовать абстрактный класс тарифа, 
 //который будет описывать основные методы и имплементировать описанный в п.1 интерфейс
 
-abstract class tarif() implements calculate_price
+abstract class tarif() implements icalc_price
 {
+    $price_per_minute;
+    $price_per_km;
     public function calculate_price() {
 
     }
     
-    public function add_service($service) {
+    public function add_service(ServiceInterface $service) {
 
     }
 }
